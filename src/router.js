@@ -1,0 +1,24 @@
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from './views/Home.vue' // Importa la vista
+import Register from './views/Register.vue'
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home 
+  },
+  {
+    path: '/registro',
+    name: 'Register',
+    component: Register
+  }
+  // ... otras rutas
+]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+export default router

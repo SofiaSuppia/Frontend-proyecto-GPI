@@ -1,0 +1,10 @@
+/* src/assets/styles.css */
+
+/* Audiowide, Electrolize, Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Electrolize&family=Open+Sans:wght@400;700&display=swap');
+
+
+/* Otras estilos globales si es necesario */
+html, body, #app {
+  font-family: 'Open Sans', sans-serif; /* Establece Open Sans como fuente base si lo deseas */
+}
