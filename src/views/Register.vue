@@ -54,7 +54,7 @@
 
         <v-row class="text-center mt-6">
           <v-col>
-            <a href="#" class="text-caption link-light font-audiowide">¿Olvidaste tu contraseña?</a>
+            <a href="#" @click.prevent="goToForgotPassword" class="text-caption link-light font-audiowide">¿Olvidaste tu contraseña?</a>
           </v-col>
           <v-col>
             <a href="#" @click.prevent="goToLogin" class="text-caption link-light font-audiowide">¿Ya tienes cuenta? Inicia Sesión</a>
@@ -92,6 +92,9 @@ export default {
     goToLogin() {
       //alert('Redirigiendo a Iniciar Sesión...');
       this.$router.push('/login');
+    },
+    goToForgotPassword() {
+    this.$router.push('/forgot-password'); // Nuevo método
     }
   },
   computed: {

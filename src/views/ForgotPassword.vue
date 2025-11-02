@@ -1,50 +1,39 @@
 <template>
-  <div class="login-background d-flex align-center justify-center">
+  <div class="forgot-password-background d-flex align-center justify-center">
     <div class="form-container pa-8">
-      <v-form @submit.prevent="handleLogin">
+      <v-form @submit.prevent="handleResetPassword">
         <!-- Título -->
-        <h2 class="text-h4 font-weight-bold text-center mb-2 font-audiowide text-white">INICIAR SESIÓN</h2>
-        <p class="text-center mb-8 text-white font-audiowide font-weight-bold">Ingresa tus credenciales</p>
+        <h2 class="text-h4 font-weight-bold text-center mb-2 font-audiowide text-white">¿OLVIDASTE TU CONTRASEÑA?</h2>
+        <p class="text-center mb-8 text-white font-audiowide font-weight-bold" style="font-size: 0.9rem;">
+          Ingresa tu correo electrónico y te enviaremos instrucciones para recuperarla
+        </p>
 
-        <!-- Campo de Usuario -->
-        <label class="input-label font-audiowide">Usuario</label>
+        <!-- Campo de Correo Electrónico -->
+        <label class="input-label font-audiowide">Correo Electrónico</label>
         <v-text-field
-          v-model="username"
-          placeholder="Ingresa tu usuario"
+          v-model="email"
+          type="email"
+          placeholder="Ingresa tu correo electrónico"
           variant="outlined"
           class="neon-input mb-4"
           density="comfortable"
           hide-details
         ></v-text-field>
 
-        <!-- Campo de Contraseña -->
-        <label class="input-label font-audiowide">Contraseña</label>
-        <v-text-field
-          v-model="password"
-          :type="showPassword ? 'text' : 'password'"
-          placeholder="Ingresa tu contraseña"
-          variant="outlined"
-          class="neon-input mb-4"
-          density="comfortable"
-          :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
-          @click:append-inner="showPassword = !showPassword"
-          hide-details
-        ></v-text-field>
-
-        <!-- Botón de Iniciar Sesión -->
+        <!-- Botón de Enviar -->
         <v-btn 
           type="submit"
           block 
           class="neon-button mt-4 font-audiowide" 
           size="large"
         >
-          Iniciar Sesión
+          Enviar Instrucciones
         </v-btn>
 
         <!-- Enlaces inferiores -->
         <v-row class="text-center mt-6">
           <v-col>
-            <a href="#" @click.prevent="goToForgotPassword" class="text-caption link-light font-audiowide">¿Olvidaste tu contraseña?</a>
+            <a href="#" @click.prevent="goToLogin" class="text-caption link-light font-audiowide">Volver a Iniciar Sesión</a>
           </v-col>
           <v-col>
             <a href="#" @click.prevent="goToRegister" class="text-caption link-light font-audiowide">¿No tienes cuenta? Regístrate</a>
@@ -59,37 +48,36 @@
 import backgroundImage from '../assets/images/registro.png';
 
 export default {
-  name: 'Login',
+  name: 'ForgotPassword',
   data() {
     return {
-      username: '',
-      password: '',
-      showPassword: false,
+      email: '',
       backgroundImage: backgroundImage
     };
   },
   methods: {
-    handleLogin() {
-      // Aquí irá la lógica de inicio de sesión
-      console.log('Intentando iniciar sesión con:', {
-        username: this.username,
-        password: this.password
-      });
-      // Por ahora, redirigimos al home
-      this.$router.push('/');
+    handleResetPassword() {
+      // Aquí irá la lógica de recuperación de contraseña
+      console.log('Solicitando recuperación de contraseña para:', this.email);
+      
+      // Mostrar mensaje de éxito (puedes implementar un snackbar más tarde)
+      alert('Se han enviado las instrucciones a tu correo electrónico');
+      
+      // Redirigir al login después de enviar
+      this.$router.push('/login');
+    },
+    goToLogin() {
+      this.$router.push('/login');
     },
     goToRegister() {
       this.$router.push('/registro');
-    },
-    goToForgotPassword() {
-    this.$router.push('/forgot-password'); // Nuevo método
     }
   }
 }
 </script>
 
 <style scoped>
-.login-background {
+.forgot-password-background {
   min-height: 100vh;
   background-image: url('../assets/images/registro.png');
   background-size: cover;

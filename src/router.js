@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue' 
 import Register from './views/Register.vue'
 import Login from './views/Login.vue'
+import ForgotPassword from './views/ForgotPassword.vue'
 import Modules from './views/Modules.vue'
 
 const routes = [
@@ -19,6 +20,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login // Nueva ruta
+  },
+  {
+    path: '/forgot-password',
+    name: 'ForgotPassword',
+    component: ForgotPassword // Nueva ruta
   },
   {
     path: '/modulos',
