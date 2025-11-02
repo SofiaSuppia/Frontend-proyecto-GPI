@@ -1,34 +1,35 @@
 <template>
   <div class="register-background d-flex align-center justify-center">
-    <!-- Contenedor del formulario con efecto neón -->
     <div class="form-container pa-8">
       <v-form @submit.prevent="handleRegister">
-        <h2 class="text-h4 font-weight-bold text-center mb-2 font-audiowide">CREAR CUENTA</h2>
-        <p class="text-center text-medium-emphasis mb-8">Ingresa tus datos para registrarte</p>
+        <!-- 1. Títulos en blanco -->
+        <h2 class="text-h4 font-weight-bold text-center mb-2 font-audiowide text-white">CREAR CUENTA</h2>
+        <p class="text-center text-medium-emphasis mb-8 text-white">Ingresa tus datos para registrarte</p>
 
-        <!-- Campo de Usuario -->
+        <!-- 2. Campos con label arriba y placeholder adentro -->
         <v-text-field
           v-model="username"
           label="Usuario"
+          placeholder="ej: tu_usuario123"
           variant="outlined"
           class="neon-input mb-4"
           prepend-inner-icon="mdi-account-outline"
         ></v-text-field>
 
-        <!-- Campo de Email -->
         <v-text-field
           v-model="email"
           label="Email"
+          placeholder="ej: correo@dominio.com"
           type="email"
           variant="outlined"
           class="neon-input mb-4"
           prepend-inner-icon="mdi-email-outline"
         ></v-text-field>
 
-        <!-- Campo de Contraseña -->
         <v-text-field
           v-model="password"
           label="Contraseña"
+          placeholder="Usa 8+ caracteres"
           :type="showPassword ? 'text' : 'password'"
           variant="outlined"
           class="neon-input mb-4"
@@ -37,7 +38,6 @@
           @click:append-inner="showPassword = !showPassword"
         ></v-text-field>
 
-        <!-- Botón de Registrarse -->
         <v-btn 
           type="submit"
           block 
@@ -47,7 +47,6 @@
           Registrarse
         </v-btn>
 
-        <!-- Enlaces adicionales -->
         <v-row class="text-center mt-6">
           <v-col>
             <a href="#" class="text-caption link-light">¿Olvidaste tu contraseña?</a>
@@ -62,10 +61,11 @@
 </template>
 
 <script>
+// ... tu script existente no necesita cambios ...
 import backgroundImage from '../assets/images/registro.png';
 
 export default {
-  name: 'Register',
+  name: 'RegisterView',
   data() {
     return {
       backgroundImage,
@@ -77,7 +77,6 @@ export default {
   },
   methods: {
     handleRegister() {
-      // Aquí iría la lógica para enviar los datos a tu backend
       console.log('Registrando usuario:', {
         username: this.username,
         email: this.email,
@@ -86,12 +85,9 @@ export default {
       alert('¡Registro enviado!');
     },
     goToLogin() {
-      // Redirige a la vista de inicio de sesión
-      // this.$router.push('/login');
       alert('Redirigiendo a Iniciar Sesión...');
     }
   },
-  // Aplica el fondo de pantalla al estilo del componente
   computed: {
     backgroundStyle() {
       return {
@@ -103,52 +99,60 @@ export default {
 </script>
 
 <style>
-/* Estilo para el fondo de la página */
 .register-background {
   min-height: 100vh;
   background-image: url('../assets/images/registro.png');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #0a111a;
 }
 
-/* Contenedor del formulario con borde neón */
 .form-container {
   width: 100%;
   max-width: 450px;
-  background-color: rgba(10, 25, 47, 0.85); /* Fondo oscuro semi-transparente */
-  backdrop-filter: blur(5px); /* Efecto de desenfoque para el fondo */
-  border: 2px solid #00bfff; /* Borde azul claro */
+  background-color: rgba(10, 25, 47, 0.85);
+  backdrop-filter: blur(5px);
+  border: 2px solid #00bfff;
   border-radius: 24px;
-  /* Sombra para el efecto de brillo neón */
   box-shadow: 0 0 15px #00bfff, 0 0 25px #00bfff, inset 0 0 10px #00bfff;
 }
 
-/* Estilo para los campos de texto con borde neón */
+/* --- 3. Estilos para los campos de texto (Inputs) --- */
+.neon-input .v-field {
+  /* Bordes más redondeados */
+  border-radius: 50px !important;
+}
+
 .neon-input .v-field__outline {
   --v-field-border-width: 2px;
   --v-field-border-opacity: 0.6;
-  color: #00bfff; /* Color del borde */
+  color: #00bfff;
   transition: all 0.3s ease-in-out;
+  /* Efecto de brillo neón constante */
+  box-shadow: 0 0 5px #00bfff;
 }
 
+/* Intensifica el brillo al enfocar el campo */
 .neon-input.v-text-field--active .v-field__outline,
 .neon-input:focus-within .v-field__outline {
   --v-field-border-opacity: 1;
-  color: #87cefa; /* Un azul más claro al enfocar */
-  box-shadow: 0 0 8px #00bfff; /* Sombra al enfocar */
+  color: #87cefa;
+  box-shadow: 0 0 12px #00bfff;
 }
 
+/* Estilo del texto de la etiqueta (label) */
 .neon-input .v-label {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-weight: bold;
 }
 
-.neon-input input {
+/* Estilo del texto del placeholder y del input */
+.neon-input input, .neon-input .v-field__input::placeholder {
   color: white !important;
+  opacity: 0.7;
 }
 
-/* Estilo para el botón con efecto neón */
+/* ... resto de los estilos ... */
 .neon-button {
   background-color: #00bfff !important;
   color: white !important;
@@ -163,7 +167,6 @@ export default {
   box-shadow: 0 0 10px #87cefa, 0 0 20px #87cefa;
 }
 
-/* Estilo para los enlaces */
 .link-light {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
