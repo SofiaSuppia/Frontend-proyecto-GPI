@@ -1,18 +1,17 @@
 <template>
   <div>
-    <!-- SECCIÓN 1: BIENVENIDA (EXISTENTE) -->
+    <!-- SECCIÓN 1: BIENVENIDA CON FONDO DE PANTALLA COMPLETA -->
     <v-img 
       :src="backgroundImage" 
       cover 
-      class="landing-background"
+      class="d-flex align-center text-center"
+      style="height: 100vh; min-height: 100vh; position: relative;"
     >
+      <!-- Capa oscura para mejorar la legibilidad del texto -->
       <v-overlay contained absolute color="black" :opacity="0.5"></v-overlay>
 
-      <v-container 
-        fill-height 
-        class="d-flex align-center justify-center text-center"
-        style="height: 100vh; position: relative; z-index: 10;"
-      >
+      <!-- Contenedor del texto, centrado vertical y horizontalmente -->
+      <v-container style="position: relative; z-index: 2;">
         <v-row justify="center">
           <v-col cols="12" sm="10" md="8">
             
@@ -51,7 +50,7 @@
       </v-container>
     </v-img>
 
-    <!-- SECCIÓN 2: APRENDE CON SECURON (NUEVA) -->
+    <!-- SECCIÓN 2: APRENDE CON SECURON (se mostrará al hacer scroll) -->
     <div class="learn-section text-center">
       <v-container>
         <v-row justify="center">
@@ -82,7 +81,9 @@
 </template>
 
 <script>
+// Asegúrate de que la ruta a la imagen sea correcta
 import backgroundImage from '../assets/images/fondo.png';
+
 export default {
   name: 'Home',
   data() {
@@ -121,9 +122,8 @@ export default {
     font-size: 3rem;
   }
 }
-.landing-background {
-    min-height: 100vh;
-}
+/* Se elimina la clase .landing-background porque los estilos se aplican directamente */
+
 .registration-button {
   border-radius: 50px !important;
   padding: 0 8px 0 32px !important;
@@ -156,7 +156,7 @@ export default {
 .learn-section {
   background-color: #000123;
   color: #f5f5f5;
-  padding: 80px 16px; /* Añadido padding horizontal */
+  padding: 80px 16px;
 }
 .securon-title {
   font-size: 4.5rem;
@@ -170,7 +170,7 @@ export default {
   margin: 0 auto;
 }
 .modules-link {
-  color: #ff007f; /* Color magenta/rosa */
+  color: #ff007f;
   font-weight: 700;
   letter-spacing: 0.1em;
   font-size: 1.2rem;
