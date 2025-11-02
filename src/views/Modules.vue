@@ -12,42 +12,45 @@
         <!-- Módulo 1: CONTRASEÑAS SEGURAS -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
-            <v-row no-gutters>
-              <v-col cols="12" sm="5">
+            <v-row no-gutters class="fill-height">
+              <v-col cols="12" sm="5" class="d-flex">
                 <v-img
                   :src="modulesData.contrasenas.image"
                   cover
-                  height="100%"
                   class="module-image"
                 ></v-img>
               </v-col>
               
-              <v-col cols="12" sm="7">
+              <v-col cols="12" sm="7" class="d-flex">
                 <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">CONTRASEÑAS SEGURAS</h2>
-                  <p class="module-description font-electrolize mb-6">
-                    Descubrirás la importancia de crear claves robustas y cómo gestionarlas para proteger tus cuentas.
-                  </p>
+                  <div>
+                    <h2 class="module-title font-electrolize mb-4">CONTRASEÑAS SEGURAS</h2>
+                    <p class="module-description font-electrolize mb-6">
+                      Descubrirás la importancia de crear claves robustas y cómo gestionarlas para proteger tus cuentas.
+                    </p>
+                  </div>
                   
-                  <v-btn
-                    color="#FF1493"
-                    class="module-button mb-3"
-                    block
-                    @click="goToModuleDetail('contrasenas')"
-                  >
-                    <span class="font-electrolize">VER MÁS</span>
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                  
-                  <v-btn
-                    variant="text"
-                    class="quiz-link font-electrolize"
-                    block
-                    @click="goToQuiz('contrasenas')"
-                  >
-                    IR AL QUIZZ
-                    <v-icon right size="small">mdi-arrow-right</v-icon>
-                  </v-btn>
+                  <div>
+                    <v-btn
+                      color="#FF1493"
+                      class="module-button mb-3"
+                      block
+                      @click="goToModuleDetail('contrasenas')"
+                    >
+                      <span class="font-electrolize">VER MÁS</span>
+                      <v-icon right>mdi-arrow-right</v-icon>
+                    </v-btn>
+                    
+                    <v-btn
+                      variant="text"
+                      class="quiz-link font-electrolize"
+                      block
+                      @click="goToQuiz('contrasenas')"
+                    >
+                      IR AL QUIZZ
+                      <v-icon right size="small">mdi-arrow-right</v-icon>
+                    </v-btn>
+                  </div>
                 </div>
               </v-col>
             </v-row>
@@ -57,42 +60,45 @@
         <!-- Módulo 2: ESTAFAS VIRTUALES -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
-            <v-row no-gutters>
-              <v-col cols="12" sm="5">
+            <v-row no-gutters class="fill-height">
+              <v-col cols="12" sm="5" class="d-flex">
                 <v-img
                   :src="modulesData.estafas.image"
                   cover
-                  height="100%"
                   class="module-image"
                 ></v-img>
               </v-col>
               
-              <v-col cols="12" sm="7">
+              <v-col cols="12" sm="7" class="d-flex">
                 <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">ESTAFAS VIRTUALES</h2>
-                  <p class="module-description font-electrolize mb-6">
-                    Conocerás las técnicas más comunes utilizadas por ciberdelincuentes y cómo identificarlas a tiempo.
-                  </p>
+                  <div>
+                    <h2 class="module-title font-electrolize mb-4">ESTAFAS VIRTUALES</h2>
+                    <p class="module-description font-electrolize mb-6">
+                      Conocerás las técnicas más comunes utilizadas por ciberdelincuentes y cómo identificarlas a tiempo.
+                    </p>
+                  </div>
                   
-                  <v-btn
-                    color="#FF1493"
-                    class="module-button mb-3"
-                    block
-                    @click="goToModuleDetail('estafas')"
-                  >
-                    <span class="font-electrolize">VER MÁS</span>
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                  
-                  <v-btn
-                    variant="text"
-                    class="quiz-link font-electrolize"
-                    block
-                    @click="goToQuiz('estafas')"
-                  >
-                    IR AL QUIZZ
-                    <v-icon right size="small">mdi-arrow-right</v-icon>
-                  </v-btn>
+                  <div>
+                    <v-btn
+                      color="#FF1493"
+                      class="module-button mb-3"
+                      block
+                      @click="goToModuleDetail('estafas')"
+                    >
+                      <span class="font-electrolize">VER MÁS</span>
+                      <v-icon right>mdi-arrow-right</v-icon>
+                    </v-btn>
+                    
+                    <v-btn
+                      variant="text"
+                      class="quiz-link font-electrolize"
+                      block
+                      @click="goToQuiz('estafas')"
+                    >
+                      IR AL QUIZZ
+                      <v-icon right size="small">mdi-arrow-right</v-icon>
+                    </v-btn>
+                  </div>
                 </div>
               </v-col>
             </v-row>
@@ -102,42 +108,45 @@
         <!-- Módulo 3: MALWARE -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
-            <v-row no-gutters>
-              <v-col cols="12" sm="5">
+            <v-row no-gutters class="fill-height">
+              <v-col cols="12" sm="5" class="d-flex">
                 <v-img
                   :src="modulesData.malware.image"
                   cover
-                  height="100%"
                   class="module-image"
                 ></v-img>
               </v-col>
               
-              <v-col cols="12" sm="7">
+              <v-col cols="12" sm="7" class="d-flex">
                 <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">MALWARE</h2>
-                  <p class="module-description font-electrolize mb-6">
-                    Aprenderás qué es, cómo se propaga y qué medidas puedes tomar para evitar que infecte tus dispositivos.
-                  </p>
+                  <div>
+                    <h2 class="module-title font-electrolize mb-4">MALWARE</h2>
+                    <p class="module-description font-electrolize mb-6">
+                      Aprenderás qué es, cómo se propaga y qué medidas puedes tomar para evitar que infecte tus dispositivos.
+                    </p>
+                  </div>
                   
-                  <v-btn
-                    color="#FF1493"
-                    class="module-button mb-3"
-                    block
-                    @click="goToModuleDetail('malware')"
-                  >
-                    <span class="font-electrolize">VER MÁS</span>
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                  
-                  <v-btn
-                    variant="text"
-                    class="quiz-link font-electrolize"
-                    block
-                    @click="goToQuiz('malware')"
-                  >
-                    IR AL QUIZZ
-                    <v-icon right size="small">mdi-arrow-right</v-icon>
-                  </v-btn>
+                  <div>
+                    <v-btn
+                      color="#FF1493"
+                      class="module-button mb-3"
+                      block
+                      @click="goToModuleDetail('malware')"
+                    >
+                      <span class="font-electrolize">VER MÁS</span>
+                      <v-icon right>mdi-arrow-right</v-icon>
+                    </v-btn>
+                    
+                    <v-btn
+                      variant="text"
+                      class="quiz-link font-electrolize"
+                      block
+                      @click="goToQuiz('malware')"
+                    >
+                      IR AL QUIZZ
+                      <v-icon right size="small">mdi-arrow-right</v-icon>
+                    </v-btn>
+                  </div>
                 </div>
               </v-col>
             </v-row>
@@ -147,42 +156,45 @@
         <!-- Módulo 4: USO RESPONSABLE DE REDES SOCIALES -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
-            <v-row no-gutters>
-              <v-col cols="12" sm="5">
+            <v-row no-gutters class="fill-height">
+              <v-col cols="12" sm="5" class="d-flex">
                 <v-img
                   :src="modulesData.redesSociales.image"
                   cover
-                  height="100%"
                   class="module-image"
                 ></v-img>
               </v-col>
               
-              <v-col cols="12" sm="7">
+              <v-col cols="12" sm="7" class="d-flex">
                 <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">USO RESPONSABLE DE REDES SOCIALES</h2>
-                  <p class="module-description font-electrolize mb-6">
-                    Explorarás buenas prácticas para compartir de manera segura, cuidar tu privacidad y evitar riesgos en línea.
-                  </p>
+                  <div>
+                    <h2 class="module-title font-electrolize mb-4">USO RESPONSABLE DE REDES SOCIALES</h2>
+                    <p class="module-description font-electrolize mb-6">
+                      Explorarás buenas prácticas para compartir de manera segura, cuidar tu privacidad y evitar riesgos en línea.
+                    </p>
+                  </div>
                   
-                  <v-btn
-                    color="#FF1493"
-                    class="module-button mb-3"
-                    block
-                    @click="goToModuleDetail('redes-sociales')"
-                  >
-                    <span class="font-electrolize">VER MÁS</span>
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                  
-                  <v-btn
-                    variant="text"
-                    class="quiz-link font-electrolize"
-                    block
-                    @click="goToQuiz('redes-sociales')"
-                  >
-                    IR AL QUIZZ
-                    <v-icon right size="small">mdi-arrow-right</v-icon>
-                  </v-btn>
+                  <div>
+                    <v-btn
+                      color="#FF1493"
+                      class="module-button mb-3"
+                      block
+                      @click="goToModuleDetail('redes-sociales')"
+                    >
+                      <span class="font-electrolize">VER MÁS</span>
+                      <v-icon right>mdi-arrow-right</v-icon>
+                    </v-btn>
+                    
+                    <v-btn
+                      variant="text"
+                      class="quiz-link font-electrolize"
+                      block
+                      @click="goToQuiz('redes-sociales')"
+                    >
+                      IR AL QUIZZ
+                      <v-icon right size="small">mdi-arrow-right</v-icon>
+                    </v-btn>
+                  </div>
                 </div>
               </v-col>
             </v-row>
@@ -222,11 +234,9 @@ export default {
   },
   methods: {
     goToModuleDetail(moduleId) {
-      // Redirige al detalle del módulo
       this.$router.push(`/modulo/${moduleId}`);
     },
     goToQuiz(moduleId) {
-      // Redirige al quiz del módulo
       this.$router.push(`/quiz/${moduleId}`);
     }
   }
@@ -250,6 +260,7 @@ export default {
   border-radius: 16px;
   overflow: hidden;
   height: 100%;
+  min-height: 350px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 20, 147, 0.2);
 }
@@ -259,15 +270,28 @@ export default {
   box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
 }
 
+/* Asegura que el row tenga altura completa */
+.fill-height {
+  height: 100%;
+}
+
+/* La columna de la imagen debe tener display flex */
+.d-flex {
+  display: flex;
+}
+
 .module-image {
   border-right: 2px solid rgba(255, 20, 147, 0.3);
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
 }
 
 .module-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  width: 100%;
   background-color: #0a1628;
 }
 
@@ -287,12 +311,25 @@ export default {
 .module-button {
   border-radius: 50px !important;
   font-weight: bold !important;
-  box-shadow: 0 0 15px rgba(255, 20, 147, 0.5);
+  box-shadow: 0 0 15px rgba(255, 20, 147, 0.5) !important;
+  text-transform: none !important;
+  background-color: #FF1493 !important;
+  color: white !important;
+}
+
+.module-button:hover {
+  box-shadow: 0 0 20px rgba(255, 20, 147, 0.7) !important;
 }
 
 .quiz-link {
   color: #FF1493 !important;
-  font-weight: 600;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+.quiz-link:hover {
+  color: #ff3da8 !important;
+  background-color: transparent !important;
 }
 
 .font-electrolize {
@@ -304,6 +341,7 @@ export default {
   .module-image {
     border-right: none;
     border-bottom: 2px solid rgba(255, 20, 147, 0.3);
+    min-height: 250px;
   }
 }
 </style>
