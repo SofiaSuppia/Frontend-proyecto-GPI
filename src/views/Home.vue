@@ -94,6 +94,10 @@ export default {
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+.text-h6.font-audiowide {
+  font-family: 'Audiowide', cursive !important;
+}
+
 @media (max-width: 960px) {
   .title-cybersecurity {
     font-size: 3rem;
