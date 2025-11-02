@@ -56,7 +56,7 @@
         <v-row justify="center">
           <v-col cols="12" md="8">
             <!-- Título -->
-            <p class="text-h4 font-electrolize mb-0">Aprende con</p>
+            <p class="securon-title font-electrolize mb-0">Aprende con</p>
             <p class="securon-title font-electrolize mb-8">SecurON</p>
 
             <!-- Párrafos de texto -->
@@ -71,7 +71,15 @@
             <p class="modules-link font-electrolize mt-10">
               NUESTROS MÓDULOS DE APRENDIZAJE
             </p>
-            <v-icon class="arrow-down" size="x-large">mdi-arrow-down</v-icon>
+            <!-- Botón de flecha para redirigir -->
+            <v-btn
+              icon
+              variant="text"
+              @click="goToModules"
+              class="mt-2"
+            >
+              <v-icon class="arrow-down" size="56">mdi-arrow-down</v-icon>
+            </v-btn>
 
           </v-col>
         </v-row>
@@ -94,6 +102,10 @@ export default {
   methods: {
     handleRegistration() {
       this.$router.push('/registro');
+    },
+    goToModules() {
+      // Asegúrate de que la ruta '/modulos' exista en tu router.js
+      this.$router.push('/modulos');
     }
   }
 }
@@ -176,6 +188,6 @@ export default {
   font-size: 1.2rem;
 }
 .arrow-down {
-  color: #ff007f;
+  color: #ff007f; 
 }
 </style>
