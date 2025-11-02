@@ -9,34 +9,31 @@
     <!-- Grid de módulos -->
     <v-container>
       <v-row>
-        <!-- Módulo 1: MALWARE -->
+        <!-- Módulo 1: CONTRASEÑAS SEGURAS -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
             <v-row no-gutters>
-              <!-- Imagen del módulo -->
               <v-col cols="12" sm="5">
                 <v-img
-                  :src="modulesData.malware.image"
+                  :src="modulesData.contrasenas.image"
                   cover
                   height="100%"
                   class="module-image"
                 ></v-img>
               </v-col>
               
-              <!-- Contenido del módulo -->
               <v-col cols="12" sm="7">
                 <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">MALWARE</h2>
+                  <h2 class="module-title font-electrolize mb-4">CONTRASEÑAS SEGURAS</h2>
                   <p class="module-description font-electrolize mb-6">
-                    Aprenderás qué es, cómo se propaga y qué medidas puedes tomar para evitar que infecte tus dispositivos.
+                    Descubrirás la importancia de crear claves robustas y cómo gestionarlas para proteger tus cuentas.
                   </p>
                   
-                  <!-- Botones -->
                   <v-btn
                     color="#FF1493"
                     class="module-button mb-3"
                     block
-                    @click="goToModuleDetail('malware')"
+                    @click="goToModuleDetail('contrasenas')"
                   >
                     <span class="font-electrolize">VER MÁS</span>
                     <v-icon right>mdi-arrow-right</v-icon>
@@ -46,7 +43,7 @@
                     variant="text"
                     class="quiz-link font-electrolize"
                     block
-                    @click="goToQuiz('malware')"
+                    @click="goToQuiz('contrasenas')"
                   >
                     IR AL QUIZZ
                     <v-icon right size="small">mdi-arrow-right</v-icon>
@@ -57,52 +54,7 @@
           </div>
         </v-col>
 
-        <!-- Módulo 2: USO RESPONSABLE DE REDES SOCIALES -->
-        <v-col cols="12" md="6" class="mb-8">
-          <div class="module-card">
-            <v-row no-gutters>
-              <v-col cols="12" sm="5">
-                <v-img
-                  :src="modulesData.redesSociales.image"
-                  cover
-                  height="100%"
-                  class="module-image"
-                ></v-img>
-              </v-col>
-              
-              <v-col cols="12" sm="7">
-                <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">USO RESPONSABLE DE REDES SOCIALES</h2>
-                  <p class="module-description font-electrolize mb-6">
-                    Explorarás buenas prácticas para compartir de manera segura, cuidar tu privacidad y evitar riesgos en línea.
-                  </p>
-                  
-                  <v-btn
-                    color="#FF1493"
-                    class="module-button mb-3"
-                    block
-                    @click="goToModuleDetail('redes-sociales')"
-                  >
-                    <span class="font-electrolize">VER MÁS</span>
-                    <v-icon right>mdi-arrow-right</v-icon>
-                  </v-btn>
-                  
-                  <v-btn
-                    variant="text"
-                    class="quiz-link font-electrolize"
-                    block
-                    @click="goToQuiz('redes-sociales')"
-                  >
-                    IR AL QUIZZ
-                    <v-icon right size="small">mdi-arrow-right</v-icon>
-                  </v-btn>
-                </div>
-              </v-col>
-            </v-row>
-          </div>
-        </v-col>
-
-        <!-- Módulo 3: ESTAFAS VIRTUALES -->
+        <!-- Módulo 2: ESTAFAS VIRTUALES -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
             <v-row no-gutters>
@@ -147,13 +99,13 @@
           </div>
         </v-col>
 
-        <!-- Módulo 4: CONTRASEÑAS SEGURAS -->
+        <!-- Módulo 3: MALWARE -->
         <v-col cols="12" md="6" class="mb-8">
           <div class="module-card">
             <v-row no-gutters>
               <v-col cols="12" sm="5">
                 <v-img
-                  :src="modulesData.contrasenas.image"
+                  :src="modulesData.malware.image"
                   cover
                   height="100%"
                   class="module-image"
@@ -162,16 +114,16 @@
               
               <v-col cols="12" sm="7">
                 <div class="module-content pa-6">
-                  <h2 class="module-title font-electrolize mb-4">CONTRASEÑAS SEGURAS</h2>
+                  <h2 class="module-title font-electrolize mb-4">MALWARE</h2>
                   <p class="module-description font-electrolize mb-6">
-                    Descubrirás la importancia de crear claves robustas y cómo gestionarlas para proteger tus cuentas.
+                    Aprenderás qué es, cómo se propaga y qué medidas puedes tomar para evitar que infecte tus dispositivos.
                   </p>
                   
                   <v-btn
                     color="#FF1493"
                     class="module-button mb-3"
                     block
-                    @click="goToModuleDetail('contrasenas')"
+                    @click="goToModuleDetail('malware')"
                   >
                     <span class="font-electrolize">VER MÁS</span>
                     <v-icon right>mdi-arrow-right</v-icon>
@@ -181,7 +133,52 @@
                     variant="text"
                     class="quiz-link font-electrolize"
                     block
-                    @click="goToQuiz('contrasenas')"
+                    @click="goToQuiz('malware')"
+                  >
+                    IR AL QUIZZ
+                    <v-icon right size="small">mdi-arrow-right</v-icon>
+                  </v-btn>
+                </div>
+              </v-col>
+            </v-row>
+          </div>
+        </v-col>
+
+        <!-- Módulo 4: USO RESPONSABLE DE REDES SOCIALES -->
+        <v-col cols="12" md="6" class="mb-8">
+          <div class="module-card">
+            <v-row no-gutters>
+              <v-col cols="12" sm="5">
+                <v-img
+                  :src="modulesData.redesSociales.image"
+                  cover
+                  height="100%"
+                  class="module-image"
+                ></v-img>
+              </v-col>
+              
+              <v-col cols="12" sm="7">
+                <div class="module-content pa-6">
+                  <h2 class="module-title font-electrolize mb-4">USO RESPONSABLE DE REDES SOCIALES</h2>
+                  <p class="module-description font-electrolize mb-6">
+                    Explorarás buenas prácticas para compartir de manera segura, cuidar tu privacidad y evitar riesgos en línea.
+                  </p>
+                  
+                  <v-btn
+                    color="#FF1493"
+                    class="module-button mb-3"
+                    block
+                    @click="goToModuleDetail('redes-sociales')"
+                  >
+                    <span class="font-electrolize">VER MÁS</span>
+                    <v-icon right>mdi-arrow-right</v-icon>
+                  </v-btn>
+                  
+                  <v-btn
+                    variant="text"
+                    class="quiz-link font-electrolize"
+                    block
+                    @click="goToQuiz('redes-sociales')"
                   >
                     IR AL QUIZZ
                     <v-icon right size="small">mdi-arrow-right</v-icon>
