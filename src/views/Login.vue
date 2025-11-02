@@ -1,31 +1,19 @@
 <template>
-  <div class="register-background d-flex align-center justify-center">
+  <div class="login-background d-flex align-center justify-center">
     <div class="form-container pa-8">
-      <v-form @submit.prevent="handleRegister">
-        <!-- 1. Títulos en blanco -->
-        <h2 class="text-h4 font-weight-bold text-center mb-2 font-audiowide text-white">CREAR CUENTA</h2>
-        <p class="text-center mb-8 text-white font-audiowide font-weight-bold">Ingresa tus datos para registrarte</p>
+      <v-form @submit.prevent="handleLogin">
+        <!-- Título -->
+        <h2 class="text-h4 font-weight-bold text-center mb-2 font-audiowide text-white">INICIAR SESIÓN</h2>
+        <p class="text-center mb-8 text-white font-audiowide font-weight-bold">Ingresa tus credenciales</p>
 
         <!-- Campo de Usuario -->
         <label class="input-label font-audiowide">Usuario</label>
         <v-text-field
           v-model="username"
-          placeholder="usuario"
+          placeholder="Ingresa tu usuario"
           variant="outlined"
           class="neon-input mb-4"
-          prepend-inner-icon="mdi-account-outline"
-          hide-details
-        ></v-text-field>
-
-        <!-- Campo de Email -->
-        <label class="input-label font-audiowide">Email</label>
-        <v-text-field
-          v-model="email"
-          placeholder="usuario@gmail.com"
-          type="email"
-          variant="outlined"
-          class="neon-input mb-4"
-          prepend-inner-icon="mdi-email-outline"
+          density="comfortable"
           hide-details
         ></v-text-field>
 
@@ -33,31 +21,33 @@
         <label class="input-label font-audiowide">Contraseña</label>
         <v-text-field
           v-model="password"
-          placeholder="Prueba123"
           :type="showPassword ? 'text' : 'password'"
+          placeholder="Ingresa tu contraseña"
           variant="outlined"
           class="neon-input mb-4"
-          prepend-inner-icon="mdi-lock-outline"
-          :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+          density="comfortable"
+          :append-inner-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
           @click:append-inner="showPassword = !showPassword"
           hide-details
         ></v-text-field>
 
+        <!-- Botón de Iniciar Sesión -->
         <v-btn 
           type="submit"
           block 
           class="neon-button mt-4 font-audiowide" 
           size="large"
         >
-          Registrarse
+          Iniciar Sesión
         </v-btn>
 
+        <!-- Enlaces inferiores -->
         <v-row class="text-center mt-6">
           <v-col>
             <a href="#" class="text-caption link-light font-audiowide">¿Olvidaste tu contraseña?</a>
           </v-col>
           <v-col>
-            <a href="#" @click.prevent="goToLogin" class="text-caption link-light font-audiowide">¿Ya tienes cuenta? Inicia Sesión</a>
+            <a href="#" @click.prevent="goToRegister" class="text-caption link-light font-audiowide">¿No tienes cuenta? Regístrate</a>
           </v-col>
         </v-row>
       </v-form>
@@ -66,46 +56,37 @@
 </template>
 
 <script>
-// ... tu script existente no necesita cambios ...
 import backgroundImage from '../assets/images/registro.png';
 
 export default {
-  name: 'RegisterView',
+  name: 'Login',
   data() {
     return {
-      backgroundImage,
       username: '',
-      email: '',
       password: '',
-      showPassword: false
+      showPassword: false,
+      backgroundImage: backgroundImage
     };
   },
   methods: {
-    handleRegister() {
-      console.log('Registrando usuario:', {
+    handleLogin() {
+      // Aquí irá la lógica de inicio de sesión
+      console.log('Intentando iniciar sesión con:', {
         username: this.username,
-        email: this.email,
         password: this.password
       });
-      alert('¡Registro enviado!');
+      // Por ahora, redirigimos al home
+      this.$router.push('/');
     },
-    goToLogin() {
-      //alert('Redirigiendo a Iniciar Sesión...');
-      this.$router.push('/login');
-    }
-  },
-  computed: {
-    backgroundStyle() {
-      return {
-        backgroundImage: `url(${this.backgroundImage})`
-      };
+    goToRegister() {
+      this.$router.push('/registro');
     }
   }
 }
 </script>
 
-<style>
-.register-background {
+<style scoped>
+.login-background {
   min-height: 100vh;
   background-image: url('../assets/images/registro.png');
   background-size: cover;
@@ -144,26 +125,20 @@ export default {
   font-size: 0.9rem;
 }
 
-/* --- 3. Estilos para los campos de texto (Inputs) --- */
+/* Estilos para los campos de texto */
 .neon-input .v-field {
-  /* Fondo del campo de texto */
   background-color: rgba(0, 30, 60, 0.5) !important;
-  /* Bordes redondeados, pero no una píldora completa */
   border-radius: 16px !important;
 }
 
 .neon-input .v-field__outline {
-  /* Ancho y opacidad del borde */
   --v-field-border-width: 2px;
   --v-field-border-opacity: 0.8;
-  /* Color del borde */
   color: #00bfff;
   transition: all 0.3s ease-in-out;
-  /* Efecto de brillo neón constante */
   box-shadow: 0 0 8px -2px #00bfff;
 }
 
-/* Intensifica el brillo al enfocar el campo */
 .neon-input.v-text-field--active .v-field__outline,
 .neon-input:focus-within .v-field__outline {
   --v-field-border-opacity: 1;
@@ -171,20 +146,16 @@ export default {
   box-shadow: 0 0 12px -1px #00bfff;
 }
 
-/* Estilo del texto de la etiqueta (label) */
 .neon-input .v-label {
-  color: rgba(255, 255, 255, 0.8) !important;
-  font-weight: bold;
-  opacity: 1 !important;
+  display: none !important;
 }
 
-/* Estilo del texto del placeholder y del input */
 .neon-input input, .neon-input .v-field__input::placeholder {
   color: white !important;
   opacity: 0.7;
 }
 
-/* ... resto de los estilos ... */
+/* Estilos para el botón */
 .neon-button {
   background-color: #00bfff !important;
   color: white !important;
@@ -199,13 +170,15 @@ export default {
   box-shadow: 0 0 10px #87cefa, 0 0 20px #87cefa;
 }
 
+/* Estilo de los enlaces */
 .link-light {
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .link-light:hover {
-  color: white;
+  color: #87cefa;
   text-decoration: underline;
 }
 </style>
