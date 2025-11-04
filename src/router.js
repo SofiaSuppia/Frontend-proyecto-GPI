@@ -4,6 +4,8 @@ import Register from './views/Register.vue'
 import Login from './views/Login.vue'
 import ForgotPassword from './views/ForgotPassword.vue'
 import Modules from './views/Modules.vue'
+import ForumView from './views/ForumView.vue'
+import ModuleDetail from './views/ModuleDetail.vue'
 
 const routes = [
   {
@@ -19,17 +21,27 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: Login // Nueva ruta
+    component: Login 
   },
   {
     path: '/forgot-password',
     name: 'ForgotPassword',
-    component: ForgotPassword // Nueva ruta
+    component: ForgotPassword 
   },
   {
     path: '/modulos',
     name: 'Modules',
     component: Modules
+  },
+  {
+    path: '/foro',
+    name: 'Forum',
+    component: ForumView 
+  },
+  {
+    path: '/modulo/:id',
+    name: 'ModuleDetail',
+    component: ModuleDetail // Nueva ruta dinámica
   }
   // ... otras rutas
 ]
